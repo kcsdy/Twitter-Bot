@@ -44,7 +44,7 @@ test(`Twitter Login Bot`, async ({ page }) => {
 
   //Write a tweet
   await test.step("writing a tweet", async()=>{
-    const Tweet_text= "Cheers mate, whats the craic! Belfast";
+    const Tweet_text= "Cheers mate, whats the craic! Belfast Nothern Ireland United Kingdom";
     await page.locator("(//div[@aria-label='Post text'])[1]").fill(Tweet_text);
   });
   
