@@ -11,12 +11,12 @@ test(`Twitter Login Bot`, async ({ page }) => {
       console.error("Navigation failed:", error);
     }
     // @ts-ignore
-    await page.locator("input[autocomplete='username']").fill(process.env.EMAIL);
+    await page.waitForSelector("input[autocomplete='username']",{state: "visible"}).fill(process.env.EMAIL);
   // @ts-ignore
-    await page.locator("input[name='text']").fill(process.env.USER_NAME);
+    await page.waitForSelector("input[name='text']",{state: "visible"}).fill(process.env.USER_NAME);
     await page.locator("//span[text()='Next']").click();
   // @ts-ignore
-    await page.locator("input[name='password']").fill(process.env.PASSWORD);
+    await page.waitForSelector("input[name='password']",{state: "visible"}).fill(process.env.PASSWORD);
     await page.locator("//span[text()='Log in']").click();
   });
   
