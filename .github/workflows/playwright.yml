@@ -19,7 +19,7 @@ jobs:
       run: npx playwright install --with-deps
     - name: Run Playwright tests
       run: $env:EMAIL="passenger.in.window.seat@gmail.com"
-           $env:USER_NAME="Kc_sdy"rt
+           $env:USER_NAME="Kc_sdy"
            $env:PASSWORD="Kutty@422"
            npx playwright test
     - uses: actions/upload-artifact@v4
