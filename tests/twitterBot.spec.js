@@ -5,12 +5,12 @@ test(`Twitter Login Bot`, async ({ page }) => {
   //Log In
   await page.goto('https://x.com/login');
   // @ts-ignore
-  await page.locator("input[autocomplete='username']").fill(process.env.EMAIL); //"passenger.in.window.seat@gmail.com"
+  await page.locator("input[autocomplete='username']").fill(process.env.EMAIL);
   // @ts-ignore
-  await page.locator("input[name='text']").fill(process.env.USER_NAME); //Kc_sdy
+  await page.locator("input[name='text']").fill(process.env.USER_NAME);
   await page.locator("//span[text()='Next']").click();
   // @ts-ignore
-  await page.locator("input[name='password']").fill(process.env.PASSWORD); //Kutty@422
+  await page.locator("input[name='password']").fill(process.env.PASSWORD);
   await page.locator("//span[text()='Log in']").click();
 
   //Accept cookies
