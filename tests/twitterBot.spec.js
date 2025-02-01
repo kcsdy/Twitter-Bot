@@ -1,14 +1,16 @@
 // @ts-check
 import { test, expect } from '@playwright/test';
-import exp from 'constants';
 
-test('Twitter Login Bot', async ({ page }) => {
+test(`Twitter Login Bot`, async ({ page }) => {
   //Log In
   await page.goto('https://x.com/login');
-  await page.locator("input[autocomplete='username']").fill("passenger.in.window.seat@gmail.com");
-  await page.locator("input[name='text']").fill("Kc_sdy");
+  // @ts-ignore
+  await page.locator("input[autocomplete='username']").fill(process.env.EMAIL); //"passenger.in.window.seat@gmail.com"
+  // @ts-ignore
+  await page.locator("input[name='text']").fill(process.env.USER_NAME); //Kc_sdy
   await page.locator("//span[text()='Next']").click();
-  await page.locator("input[name='password']").fill("Kutty@422");
+  // @ts-ignore
+  await page.locator("input[name='password']").fill(process.env.PASSWORD); //Kutty@422
   await page.locator("//span[text()='Log in']").click();
 
   //Accept cookies
@@ -23,7 +25,7 @@ test('Twitter Login Bot', async ({ page }) => {
   await page.waitForTimeout(2000);
 
   //Write a tweet
-  const Tweet_text= "Testing bot 01fffasdsada";
+  const Tweet_text= "Exiting day Ahead brother";
   await page.locator("(//div[@aria-label='Post text'])[1]").fill(Tweet_text);
 
   //Post the tweet
