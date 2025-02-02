@@ -1,5 +1,6 @@
 // @ts-check
 import { test, expect } from '@playwright/test';
+require('dotenv').config({path:'../environmentVariables.env'});
 
 test(`Twitter Login Bot`, async ({ page }) => {
   //Log In
@@ -14,7 +15,7 @@ test(`Twitter Login Bot`, async ({ page }) => {
     await page.waitForSelector("input[autocomplete='username']",{state: "visible"});
     // @ts-ignore
     await page.locator("input[autocomplete='username']").fill(process.env.EMAIL);
-  
+    await page.locator("//span[text()='Next']").click();
     await page.waitForSelector("input[name='text']",{state: "visible"});
     // @ts-ignore
     await page.locator("input[name='text']").fill(process.env.USER_NAME);
