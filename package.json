@@ -2,7 +2,9 @@
   "name": "twitter-bot",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "main":"$env:EMAIL='passenger.in.window.seat@gmail.com' $env:USER_NAME='Kc_sdy' $env:PASSWORD='Kutty@422' $env:TWEET_TEXT='Dont give a shit' npx playwright test"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
